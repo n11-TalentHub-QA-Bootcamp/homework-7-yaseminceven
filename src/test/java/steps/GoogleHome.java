@@ -11,7 +11,7 @@ Page_GoogleHomepage googleHomepage=new Page_GoogleHomepage();
 	
 	@Given("^I launch Chrome browser$")
 	public void I_launch_Chrome_browser() throws Exception{
-		googleHomepage.launchBrowserWithFirefox();
+		googleHomepage.launchBrowser();
 	}
 	
 	@When("^I open Google Homepage$")

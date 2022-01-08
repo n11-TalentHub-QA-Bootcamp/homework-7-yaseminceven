@@ -2,11 +2,9 @@
 FROM kshivaprasad/java:1.8
 #Step 1 : Install the pre-requisite
 RUN apt-get update
-#RUN apt-get install -y libatspi2.0-0 libasound2 libcups2  libatk1.0-0 libdrm2 libcairo2
-
-#RUN apt-get install -y libgconf2-4 libnss3-1d libxss1  libatk1.0-0 libdrm2 libcairo2
-#RUN  apt-get install -y libappindicator3-1 fonts-liberation libatk-bridge2.0-0
-#RUN apt-get install libcurl3
+#Install chrome the dependencies
+RUN apt-get install -y ca-certificates fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libdrm2 libexpat1 libgbm1
+RUN apt-get install -y libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcb1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxkbcommon0 libxrandr2 wget xdg-utils
 RUN apt-get install -y curl
 RUN apt-get install -y p7zip \
     p7zip-full \
@@ -17,8 +15,10 @@ RUN apt-get install -y p7zip \
 
 #Version numbers
 ARG FIREFOX_VERSION=78.0.2
-ARG CHROME_VERSION=83.0.4103.116
-ARG CHROMDRIVER_VERSION=83.0.4103.39
+#ARG CHROME_VERSION=83.0.4103.116
+ARG CHROME_VERSION=97.0.4692.71
+#ARG CHROMDRIVER_VERSION=83.0.4103.39
+ARG CHROMDRIVER_VERSION=97.0.4692.71
 ARG FIREFOXDRIVER_VERSION=0.29.0
 
 #Step 2: Install Chrome
